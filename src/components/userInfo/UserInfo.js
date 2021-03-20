@@ -1,10 +1,14 @@
 import { Container } from '@material-ui/core'
 import React from 'react'
-import {AmberButton} from '../../buttons'
+import { auth, db } from '../../firebase';
+import {RedButton, AmberButton} from '../../buttons'
 
 
 function UserInfo() {
-
+ 
+  const handleSignOut = () => {
+    auth.signOut();
+  }
 
     return (
         <div >
@@ -14,8 +18,13 @@ function UserInfo() {
           
           <AmberButton style={{fontSize:12}}
                   className="btn__buysell"
-              >Dashboard</AmberButton> </p>
+                  disabled
+              >Dashboard</AmberButton>
          
+         <RedButton style={{fontSize:12}}
+                  className="btn__buysell"
+                  onClick={handleSignOut}
+              >Log Out</RedButton> </p>
     
         </div>
 
