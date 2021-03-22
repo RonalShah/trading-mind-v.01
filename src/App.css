@@ -31,6 +31,7 @@
   margin: 1%;
   height: 60vh;
 
+
 }
 
 .MainAsset__Chart {
@@ -39,12 +40,14 @@
   height : 100%;
   margin: 1%;
   position: relative;
+
 }
 
 
 .Minor__Chart {
   border: solid #222 1px;
-  border-radius: 5%;
+  border-radius: 1%;
+  background-color: #111;
 }
 
 
@@ -68,6 +71,8 @@
   border-radius: 5px;
   border: 1px solid  #333;
 }
+
+
 
 .adSpace{
   text-align: center;
@@ -192,11 +197,11 @@
 
 .marquee{
 
-  margin-top: 10%;
-  margin-bottom: 10%;
+  margin-top: 5%;
+  margin-bottom: 5%;
 
   color: goldenrod;
-  height: 25vh; 
+  height: 20vh; 
   border-radius: 5px;
   text-align: center;
   width: 100%;

@@ -1,6 +1,7 @@
 import React from 'react'
 import {useInput} from '../MainStoreProvider'
 import {BlueButton, GreenButton, RedButton, ResetButton} from '../../buttons'
+import { BluePaper } from '../../styledComponents'
 
 
 
@@ -11,8 +12,9 @@ function BuySell() {
 
     return (
         <div>
-            <h2> Trader </h2>
-            <h3>Price : {chartData.currentPrice} </h3>
+            <BluePaper><h2 > Trader </h2></BluePaper>
+            
+            <h3 className="userhead" >Price : {chartData.currentPrice} </h3>
             <div>
                 <GreenButton onClick={()=>dispatch({type:"buy"})}
                 className="btn__buysell"

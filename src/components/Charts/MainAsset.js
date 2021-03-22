@@ -4,6 +4,7 @@ import React from 'react'
 
 import {BlueButton} from '../../buttons'
 import {Container, Grid} from '@material-ui/core';
+import {PlayCircleFilled} from '@material-ui/icons'
 
 function MainAsset() {
     const {chartData, dispatch, starter} = useInput()
@@ -19,9 +20,11 @@ function MainAsset() {
                 lg={12} sm={10} xl={12} xs={12} direction="column" spacing={2}>
                      
                     <Grid item >
-                        <BlueButton onClick={()=>starter()}
+                        {/* <BlueButton 
                         className = "btn__start"
-                        >Start</BlueButton>
+                        >Start</BlueButton> */}
+                              <PlayCircleFilled onClick={()=>starter()}
+                              style={{color:"green", fontSize:"60px"}}/>
                     </Grid>
 
                     <Grid item sm={12}>

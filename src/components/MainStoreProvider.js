@@ -42,7 +42,7 @@ const initialState = {
                         {
                             label: "Asset Price",
                             data: [],
-                            borderwidth: 1,
+
                             
                         }
 
@@ -101,7 +101,6 @@ const reducer__Chart = (state, action) => {
                                 data: state.assetData,
 
                                 borderColor: state.lineColor,    
-                                borderWidth: 1,
                                 lineTension: .2,
                                 pointRadius: 0,
                                 fill: false,
@@ -159,6 +158,8 @@ const reducer__Chart = (state, action) => {
                                 label: state.mainChart.maindata.datasets[0].label,
                                 data: state.assetData,
                                 borderColor: state.lineColor,
+
+
                                 
                             }
     

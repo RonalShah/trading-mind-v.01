@@ -7,16 +7,17 @@ import {FXChart, BondChart, EconNews} from '../Charts/EconCharts'
 import NavBar from '../navBar/NavBar';
 import Logo from '../../images/logo.png'
 import {Container,Grid } from '@material-ui/core';
+import { BluePaper } from '../../styledComponents';
+
 
 export default function Home()  {
-  
+
+
+
   return (
 
-    <Grid container style={{backgroundColor:"black"}}  xs={12} className="Home">
+    <Grid container style={{backgroundColor: "black"}}  xs={12} className="Home">
     
-      
-
-
 
 
           <Container maxWidth style={{margin:2}}>
@@ -50,8 +51,9 @@ export default function Home()  {
         <div className=" userinfo">
           <div>
 
-          <h1>Ads</h1>
-            <img src={Logo} width="200"/>
+          <BluePaper><h2>Sponsors</h2></BluePaper>
+          <br/>
+            {/* <img src={Logo} width="200"/> */}
 
           </div>
 
@@ -70,13 +72,13 @@ export default function Home()  {
                 <BondChart/>
               </Grid>
 
-              </Grid>
+          </Grid>
 
 
         </div>
 
         <div className="EconNews">
-
+          <BluePaper><h2>News</h2></BluePaper>
           <Grid container >
             <marquee className="marquee" direction="down" scrollamount="2">
               <EconNews/>

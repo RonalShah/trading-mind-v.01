@@ -1,7 +1,7 @@
 import './App.css'
 import SignIn from './components/SignIn/SignIn';
 import { auth } from './firebase';
-import React, {useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import {useInput} from './components/MainStoreProvider'
 import Home from './components/home/Home';
 

@@ -4,7 +4,8 @@ import Button from '@material-ui/core/Button';
 const  fontName = "Helvetica"
 
 export const BlueButton = styled(Button)({
-  background: 'linear-gradient(180deg, #5D8AA8 20%, #0018A8 90%)',
+  // background: 'linear-gradient(180deg, #5D8AA8 20%, #0018A8 90%)',
+  background: "green",
   border: 5,
   borderColor: '#15235a',
   borderRadius: 10,
@@ -15,6 +16,8 @@ export const BlueButton = styled(Button)({
   padding: '0 30px',
   font: fontName,
   margin: 5,
+  marginTop: 25
+  
   
 });
 
@@ -70,7 +73,6 @@ export const RedButton = styled(Button)({
     border: 5,
     borderColor: '#15235a',
     borderRadius: 5,
-  //   boxShadow: '2px 2px #0076a3',
   color: 'darkred',
     fontWeight: 'bolder',
     height: 48,

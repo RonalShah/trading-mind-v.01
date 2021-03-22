@@ -25,7 +25,7 @@ const initialEcon = {
                     label: "FX",
                     data: [33, 53, 85, 41, 44, 65],
                     fill: false,
-                    borderColor: "rgba(75,192,192,1)",
+                    borderColor: "silver",
                     pointRadius: 0,
                     borderWidth: 2,
                     backgroundColor: "darkgrey"
@@ -58,10 +58,12 @@ const initialEcon = {
             datasets: [
             {
                 label: "Rates",
-                data: [1.2, .8, .9, 1.1, .7],
+                data: [1.2, .8, .9, 1.1, .7, .9],
                 fill: false,
-                borderColor: "rgba(75,192,192,1)",
-                backgroundColor: ""
+                borderColor: "silver",
+                pointRadius: 0,
+                borderWidth: 2,
+                backgroundColor: "darkgrey"
             },
 
             ]
