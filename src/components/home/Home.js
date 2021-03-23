@@ -13,8 +13,8 @@ import { BluePaper } from '../../styledComponents';
 export default function Home()  {
 
 
-
   return (
+
 
     <Grid container style={{backgroundColor: "black"}}  xs={12} className="Home">
     

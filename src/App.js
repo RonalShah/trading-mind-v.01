@@ -11,8 +11,7 @@ function App() {
 
   const {chartData, dispatch} = useInput()
 
-//  const user = chartData.user
-  //const [user, setUser] = useState(chartData.user)
+ 
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -41,8 +40,6 @@ function App() {
         {chartData.user ?        
           <Home/> : <SignIn />
         }
-
-    
 
 
 
