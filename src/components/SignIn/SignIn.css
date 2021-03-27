@@ -1,78 +1,80 @@
-
-
-.Login {
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    text-justify: center;
-  
+.signIn {
+  display: flex;
+  color: black;
 }
 
-.form__Login {
-  margin-top: 50px;
-  display:flex;
+.signIn__imageDiv {
+  width: 50vw;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+.signIn__imageDiv > img {
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.signIn__formDiv > form {
+  display: flex;
+  height: 100vh;
   flex-direction: column;
-  align-items: center;
-  text-justify: center;
-  border-style: solid;
-  border-width: 1px;
+  justify-content: center;
+}
+
+.signIn__formDiv > form > * {
+  margin: 15px 100px;
+}
+
+.signIn__formText {
+  width: 400px;
+}
+
+.signIn__login {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #0a66c2;
+  border: none;
+  outline: none;
+  color: white;
   border-radius: 5px;
-  border-color: darkgray;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.btn__google {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  font-size: 15px;
+  text-align: center;
   padding: 10px;
-
-}
-
-.btn__login {
-    margin: 10px;
-    display:flex;
-    align-items: center;
-    border-radius: 5px;
-    font-size: 15px;
-    text-align: center;
-    padding: 10px;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    width: 90%;
-
-    box-shadow: 0 4px 8px 0 rgba(65, 63, 63, 0.2),
+  border: none;
+  outline: none;
+  cursor: pointer;
+  width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(65, 63, 63, 0.2),
     0 6px 20px 0 rgba(65, 63, 63, 0.19);
 }
 
-.login__input {
-    margin: 10px;
-    display:flex;
-    align-items: center;
-    border-radius: 5px;
-    font-size: 15px;
-    padding: 10px;
-    border: none;
-    text-align: center;
-    box-shadow: 0 4px 8px 0 rgba(65, 63, 63, 0.2),
-    0 6px 20px 0 rgba(65, 63, 63, 0.19);
+.btn__google img {
+  width: 30px;
+  margin-right: 30px;
+}
+
+@media (max-width: 1000px) {
+  .signIn__imageDiv {
+    display: none;
   }
 
-  .btn__google {
-    margin-top:50px;
-    display:flex;
-    align-items: center;
-    border-radius: 5px;
-    font-size: 15px;
-    text-align: center;
-    padding: 10px;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    width: 100%;
-    box-shadow: 0 4px 8px 0 rgba(65, 63, 63, 0.2),
-    0 6px 20px 0 rgba(65, 63, 63, 0.19);
-    
-  }
-
-
-.loginImg{
+  .signIn {
     justify-content: center;
+    align-items: center;
+  }
+
+  .signIn__formDiv > form > * {
     margin: 10px;
-    width: 50%;
-    height: 50%;
-  } 
+  }
+}
