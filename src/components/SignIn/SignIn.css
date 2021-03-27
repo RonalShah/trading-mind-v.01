@@ -43,6 +43,23 @@
   font-size: 18px;
 }
 
+.signIn__loader,
+.google__loader {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.signIn__loader > .MuiCircularProgress-root,
+.signIn__loader > .MuiCircularProgress-root > svg {
+  margin-top: 0px;
+  color: white;
+}
+
+.google__loader > .MuiCircularProgress-root,
+.google__loader > .MuiCircularProgress-root > svg {
+  margin-top: 0px;
+}
+
 .btn__google {
   display: flex;
   align-items: center;

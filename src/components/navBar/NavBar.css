@@ -12,3 +12,13 @@
   font-weight: 500;
   cursor: pointer;
 }
+
+.router__link {
+  color: white;
+  text-decoration: none;
+}
+
+.router__link:hover {
+  text-decoration: none;
+  color: white;
+}

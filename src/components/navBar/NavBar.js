@@ -5,6 +5,7 @@ import { Navbar, Nav, NavDropdown, Form, Button } from "react-bootstrap";
 import { Avatar } from "@material-ui/core";
 import { auth } from "../../firebase";
 import { useInput } from "../MainStoreProvider";
+import { Link as RouterLink, Route } from "react-router-dom";
 
 function NavBar() {
   const { chartData, dispatch } = useInput();
@@ -18,15 +19,22 @@ function NavBar() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link className="navBar__link">Home</Nav.Link>
-            <Nav.Link className="navBar__link">Dashboard</Nav.Link>
+            <Nav.Link className="navBar__link">
+              <RouterLink to="/home" className="router__link">
+                Home
+              </RouterLink>
+            </Nav.Link>
+            <Nav.Link className="navBar__link">
+              <RouterLink to="/dashboard" className="router__link">
+                Dashboard
+              </RouterLink>
+            </Nav.Link>
           </Nav>
           <Nav>
             <div
               style={{
                 display: "flex",
                 alignItems: "center",
-                justifyContent: "center",
                 marginRight: "30px",
               }}
             >
@@ -42,6 +50,7 @@ function NavBar() {
                 Hello, {chartData.user?.email.split("@")[0]}
               </div>
             </div>
+
             <Nav.Link onClick={() => auth.signOut()} className="navBar__link">
               Log Out
             </Nav.Link>

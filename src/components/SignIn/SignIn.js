@@ -2,33 +2,58 @@ import React, { useState } from "react";
 import { auth, GoogleSignIn } from "../../firebase";
 import "./SignIn.css";
 import login_pic from "../../images/trading.jpg";
-import { TextField } from "@material-ui/core";
+import { CircularProgress, TextField } from "@material-ui/core";
+import { useHistory } from "react-router";
 
 function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState("");
+  const history = useHistory();
 
   const emailSignIn = (event) => {
     event.preventDefault();
+    setLoading("signIn");
     auth
       .signInWithEmailAndPassword(email, password)
-      .then(() => console.log(auth.value))
-      .catch((err) => alert("Failed to Sign In : " + err));
+      .then(() => {
+        history.push("/home");
+        setLoading("");
+      })
+      .catch((err) => {
+        setLoading("");
+        alert("Failed to Sign In : " + err);
+      });
   };
 
   const emailSignUp = (event) => {
     event.preventDefault();
+    setLoading("signUp");
     auth
       .createUserWithEmailAndPassword(email, password)
-      .then(() => console.log(auth.value))
-      .catch((err) => alert("Failed to Sign In : " + err));
+      .then(() => {
+        history.push("/home");
+        setLoading("");
+      })
+      .catch((err) => {
+        setLoading("");
+        alert("Failed to Sign In : " + err);
+      });
   };
 
   const handleGoogleSignIn = (event) => {
     event.preventDefault();
+    setLoading("google");
     auth
       .signInWithPopup(GoogleSignIn)
-      .catch((err) => alert("Failed to Sign In"));
+      .then(() => {
+        history.push("/home");
+        setLoading("");
+      })
+      .catch((err) => {
+        setLoading("");
+        alert("Failed to Sign In");
+      });
   };
 
   return (
@@ -56,24 +81,56 @@ function SignIn() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button onClick={emailSignIn} type="submit" className="signIn__login">
-            Login
-          </button>
-          <button onClick={emailSignUp} type="submit" className="signIn__login">
-            Sign Up
-          </button>
+          {loading === "signIn" ? (
+            <button disabled={true} className="signIn__login signIn__loader">
+              <CircularProgress />
+            </button>
+          ) : (
+            <button
+              disabled={loading.length > 0}
+              onClick={emailSignIn}
+              type="submit"
+              className="signIn__login"
+            >
+              Login
+            </button>
+          )}
+          {loading === "signUp" ? (
+            <button disabled={true} className="signIn__login signIn__loader">
+              <CircularProgress />
+            </button>
+          ) : (
+            <button
+              disabled={loading.length > 0}
+              onClick={emailSignUp}
+              type="submit"
+              className="signIn__login"
+            >
+              Sign Up
+            </button>
+          )}
           <p style={{ textAlign: "center" }}>OR</p>
           <div>
-            <button onClick={handleGoogleSignIn} className="btn__google">
-              <img
-                className="app__loginImg"
-                alt="GoogleLogo"
-                src="https://i.ibb.co/qNdyvc7/google.png"
-                width="80px"
-                height="30px"
-              />
-              <div>Sign In with Google</div>
-            </button>
+            {loading === "google" ? (
+              <button disabled={true} className="btn__google google__loader">
+                <CircularProgress />
+              </button>
+            ) : (
+              <button
+                disabled={loading.length > 0}
+                onClick={handleGoogleSignIn}
+                className="btn__google"
+              >
+                <img
+                  className="app__loginImg"
+                  alt="GoogleLogo"
+                  src="https://i.ibb.co/qNdyvc7/google.png"
+                  width="80px"
+                  height="30px"
+                />
+                <div>Sign In with Google</div>
+              </button>
+            )}
           </div>
         </form>
       </div>
