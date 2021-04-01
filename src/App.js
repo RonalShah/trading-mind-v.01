@@ -51,7 +51,8 @@ function App() {
         <Router>
           <Switch>
             <Route exact path="/">
-              <LandingPage />
+              <SignIn />
+              {/* <LandingPage /> */}
             </Route>
             <PrivateRoute
               exact={true}
@@ -74,15 +75,7 @@ function App() {
           </Switch>
         </Router>
       )}
-      {/* {loading ? (
-        <div className="App__loader">
-          <CircularProgress />
-        </div>
-      ) : chartData.user ? (
-        <Home />
-      ) : (
-        <SignIn />
-      )} */}
+
     </div>
   );
 }
